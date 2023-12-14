@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Home Page</h1>
+    <p>This is the homepage of website.</p>
+    <br>
+    Created with express in node js
+    <p>
+        <a href="profile">Profile</a>
+        <br>
+        <a href="events">Events</a>
+    </p>
+    <form action="login" method="post">
+        Username : <input type="text" name="username" id="username"><br>
+        Password: <input type="password" name="password" id="password"><br>
+        <input type="submit" onclick="submitLogin()" value="Login">
+    </form>
+</body>
+<script>
+    function submitLogin() {
+        let usern = document.getElementById("username").value;
+        let pp = document.getElementById("password").value;
+        let dataToSend = { username: usern, password: pp };
+        fetch("login", {
+            method: "post",
+            body: JSON.stringify(dataToSend),
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        }).then res => console.log(res);
+    }
+</script>
+
+</html>
