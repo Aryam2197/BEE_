@@ -26,7 +26,12 @@ app.get("/myFile", (req,res) =>{
 function getData(){
     return {
         name:"The_Name",
-        color:"Red"
+        color:"Red",
+        messages : [
+            "Exam of subj_1 on 16 Dec",
+            "Exam of subj_2 on 20 Dec",
+            "Christmas Holidays from 23 Dec"
+        ]
     }
 }
 
